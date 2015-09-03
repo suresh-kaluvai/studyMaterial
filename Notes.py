@@ -122,3 +122,64 @@ print "Users connected: %d" % (userCount, )     # Users connected: 6
 
 #### fomrat method needs to use when formatting multiple data types
 
+
+################################
+"""
+    Python functions allow to use default value parameters
+    You can specify these values by name
+"""
+
+def info(object, spacing=10, collapse=1):
+
+# you can use default values like this
+info(odbchelper)
+info(odbchelper, 12)
+info(odbchelper, collapse=0)
+info(spacing=15, object=odbchelper)
+
+### type function
+
+"""
+    type takes anything −− and I mean anything −− and returns its datatype. Integers, strings, lists,
+    dictionaries, tuples, functions, classes, modules, even types are acceptable.
+"""
+
+### string function
+
+"""
+    The str coerces data into a string. Every datatype can be coerced into a string.
+"""
+
+### dir function
+"""
+    dir returns a list of the attributes and methods of any
+    object: modules, functions, strings, lists, dictionaries... pretty much anything
+"""
+
+d = {}
+dir(d)          ### ['clear', 'copy', 'get', 'has_key', 'items', 'keys', 'setdefault', 'update', 'values']
+
+### callable function
+""" the callable function takes any object and returns True if the object can be called, or False otherwise."""
+
+### getattr
+"""
+    getattr is an incredibly useful built−in function that returns any attribute of any object
+    getattr isn't just for built−in datatypes. It also works on modules.
+"""
+
+#### and, or
+
+a = "first"
+b = "second"
+
+### Ternary operator in python using and, or
+1 and a or b        # Results 'first'
+0 and a or b        # Results 'second'
+
+### lambda functions
+
+""" lambda functions allows you to define one−line mini−functions on the fly """
+
+### from module import syntax
+from module import *    # to import all attributes and methods
