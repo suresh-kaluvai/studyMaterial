@@ -168,6 +168,9 @@ dir(d)          ### ['clear', 'copy', 'get', 'has_key', 'items', 'keys', 'setdef
     getattr isn't just for built−in datatypes. It also works on modules.
 """
 
+### hasattr()
+""" hasattr is a complementary function that checks whether an object has a particular attribute """
+
 #### and, or
 
 a = "first"
@@ -183,3 +186,62 @@ b = "second"
 
 ### from module import syntax
 from module import *    # to import all attributes and methods
+
+### Python uses try...except to handle exceptions and raise to generate them.
+"""
+    • Accessing a non−existent dictionary key will raise a KeyError exception.
+    • Searching a list for a non−existent value will raise a ValueError exception.
+    • Calling a non−existent method will raise an AttributeError exception.
+    • Referencing a non−existent variable will raise a NameError exception.
+    • Mixing datatypes without coercion will raise a TypeError exception.
+"""
+
+### for loop
+
+li = ['a', 'b', 'e']
+for s in li:
+    print s
+
+### glob module
+"""
+The glob module, on the other hand, takes a wildcard and returns the full path of all files and
+directories matching the wildcard."""
+
+
+### Regular expressions
+
+s = '100 BROAD'
+re.sub('ROAD$', 'RD.', s)               # '100 BRD.'
+re.sub('\\bROAD$', 'RD.', s)            # '100 BROAD'
+re.sub(r'\bROAD$', 'RD.', s)            # '100 BROAD'
+
+s = '100 BROAD ROAD APT. 3'
+re.sub(r'\bROAD$', 'RD.', s)            # '100 BROAD ROAD APT. 3'
+re.sub(r'\bROAD\b', 'RD.', s)           # '100 BROAD RD. APT 3'
+
+"""
+    \b means "a word boundary must occur right here.
+    Also use raw string in regular expression in order escape the strings from python
+"""
+
+### Regex for validating phone number US
+phonePattern = re.compile(r'(\d{3})\D*(\d{3})\D*(\d{4})\D*(\d*)$')
+phonePattern.search('work 1−(800) 555.1212 #1234').groups()
+
+
+#######
+"""
+    • ^ matches the beginning of a string.
+    • $ matches the end of a string.
+    • \b matches a word boundary.
+    • \d matches any numeric digit.
+    • \D matches any non−numeric character.
+    • x? matches an optional x character (in other words, it matches an x zero or one times).
+    • x* matches x zero or more times.
+    • x+ matches x one or more times.
+    • x{n,m} matches an x character at least n times, but not more than m times.
+    • (a|b|c) matches either a or b or c.
+    • (x) in general is a remembered group. You can get the value of what matched by using the groups() 
+        method of the object returned by re.search.
+
+"""
